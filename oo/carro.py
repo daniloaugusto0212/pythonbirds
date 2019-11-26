@@ -87,5 +87,5 @@ O       L
     >>> 'Norte'
     >>> carro.girar_esquerda()
     >>> carro.calcular_direcao()
-    >>> 'Oeste
+    >>> 'Oeste'
 '''
