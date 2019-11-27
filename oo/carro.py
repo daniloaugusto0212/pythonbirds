@@ -1,4 +1,5 @@
-'''Criar uma classe carro que vai possuir dois atributos compostos por outras duas classe:
+
+"""Criar uma classe carro que vai possuir dois atributos compostos por outras duas classe:
 
 1) Motor
 2) Direção
@@ -27,7 +28,7 @@ O       L
     1
     >>> motor.acelerar()
     >>> motor.velocidade()
-     2
+    2
     >>> motor.acelerar()
     >>> motor.velocidade()
     3
@@ -37,7 +38,7 @@ O       L
     >>> motor.frear()
     >>> motor.velocidade()
     0
-    >>> #Testando Direcao
+    >>> #Testando Direct
     >>> direcao = Direcao()
     >>> direcao.valor
     'Norte'
@@ -85,7 +86,34 @@ O       L
     >>> carro.girar_esquerda()
     >>> carro.calcular_direcao()
     >>> 'Norte'
-    >>> carro.girar_esquerda()
+    >>> carro.girarclass Motor:_esquerda()
     >>> carro.calcular_direcao()
     >>> 'Oeste'
-'''
+"""
+
+NORTE= 'Norte'
+SUL= 'Sul'
+LESTE= 'Leste'
+OESTE= 'Oeste'
+
+class Direcao:
+    rotacao_a_deireita_dct = {NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE}
+
+    rotacao_a_esquerda_dct = {NORTE: OESTE, OESTE: SUL, SUL: LESTE, LESTE: NORTE}
+
+    def __init__(self):
+        self.valor = NORTE
+
+    def girar_a_direita(self):
+        self.valor = self.rotacao_a_deireita_dct[self.valor]
+
+class Motor:
+    def __init__(self):
+        self.velocidade = 0
+
+    def acelerar(self):
+        self.velocidade += 1
+
+    def frear(self):
+        self.velocidade -= 1
+        self.velocidade = max(0, self.velocidade)
