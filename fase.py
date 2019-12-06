@@ -60,6 +60,7 @@ class Fase():
         :param passaros:
         """
         self._passaros.extend(passaros)
+        self._passaros.extend(passaros)
 
     def status(self):
         """
